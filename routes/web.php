@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/{page?}', 'ProductController@index')->name('products');
+Route::post('/{page?}', 'ProductController@store')->name('store');
